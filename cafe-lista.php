@@ -1,19 +1,7 @@
 <?php
-
-include('header.php');
-
-
-
-$user = 'root';
-$pass = '';
-$host = 'localhost';
-$db = 'cafeimetrodb';
-
-include('script-db/connect.php');
-
-$query = 'select id, nome, descricao, tipo_id from cafe';
-
-$res = mysqli_query($conn, $query);
+include 'header.php';
+include 'script-db/connect.php';
+include 'script-db/cafe-banco.php';
 ?>
 
 <div class="container">
@@ -23,31 +11,25 @@ $res = mysqli_query($conn, $query);
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Tipo</th>
       </tr>
     </thead>
     <tbody>
-      <?php
-      while ($cafe = mysqli_fetch_assoc($res)) {
-
-      ?>
-
-
+<?php
+$cafes = listaCafe($conn);
+foreach ($cafes as $cafe): ?>      
         <tr>
-          <td><?= $cafe['id']; ?></td>
-          <td><?= $cafe['nome']; ?> </td>
-          <td><?= $cafe['descricao']; ?></td>
-          <td><?= $cafe['tipo_id']; ?></td>
+          <td><?= $cafe['id'] ?></td>
+          <td><?= $cafe['nome'] ?> </td>
+          <td><?= $cafe['descricao'] ?></td>
+          <td><?= $cafe['tipo_id'] ?></td>
         </tr>
-
-    </tbody>
-
-  <?php
-      }
-  ?>
+    
+     <?php endforeach;
+?>
+</tbody>
   </table>
-
-
-
-
 </div>
+
+<?php include "footer.php";
+?>

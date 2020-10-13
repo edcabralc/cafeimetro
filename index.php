@@ -1,15 +1,5 @@
-
-
-
-
 <?php
-
-echo ("Ola mundo agora essa porra tá funcionanado");
-// mysqli_connect();
-$numero = 0;
+include 'header.php';
+include 'footer.php';
 ?>
 
-
-<?php if ($numero < 2): ?>
-<?php echo ($numero); ?>
-<?php endif; ?>
