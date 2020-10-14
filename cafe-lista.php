@@ -16,7 +16,7 @@ include 'script-db/cafe-banco.php';
     </thead>
     <tbody>
 <?php
-$cafes = listaCafe($conn);
+$cafes = listaTipoCafe($conn);
 foreach ($cafes as $cafe): ?>      
         <tr>
           <td><?= $cafe['tipo_id'] ?></td>
@@ -24,7 +24,7 @@ foreach ($cafes as $cafe): ?>
           <td><?= $cafe['descricao'] ?> </td>
           <td><?= $cafe['nome_tipo'] ?></td>
           <td><form name="" method="post" action="cafe-form-edita.php">
-          <input type="hidden" value="<?=$cafe['id']?>" name="id" />
+          <input type="hidden" value="<?= $cafe['id'] ?>" name="id" />
           <button class="btn btn-primary">Alterar</button>
           </form>
           </td>
