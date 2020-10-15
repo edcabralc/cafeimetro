@@ -1,5 +1,5 @@
 create database if not exists cafeimetrodb character set utf8 
-collate urf8_general_ci;
+collate utf8_general_ci;
 
 use cafeimetrodb;
 

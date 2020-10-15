@@ -27,7 +27,7 @@
           <a class="nav-link" href="cafe-lista.php">Lista de Cafés <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Adiciona Café </a>
+          <a class="nav-link" href="cafe-form-adiciona.php">Adiciona Café </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Lista Tipos</a>
