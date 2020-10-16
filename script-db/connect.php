@@ -4,5 +4,5 @@ $pass = '';
 $host = 'localhost';
 $db = 'cafeimetrodb';
 
-$conn = mysqli_connect($host, $user, $pass, $db);
-mysqli_set_charset($conn, 'utf8');
+$conn = new mysqli($host, $user, $pass, $db);
+$conn->set_charset('utf8');

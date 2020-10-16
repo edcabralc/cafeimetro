@@ -30,10 +30,10 @@
           <a class="nav-link" href="cafe-form-adiciona.php">Adiciona Café </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lista Tipos</a>
+          <a class="nav-link" href="tipo-lista.php">Lista Tipos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Adiciona tipo</a>
+          <a class="nav-link" href="tipo-form-adiciona.php">Adiciona tipo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Meu Consumo</a>
