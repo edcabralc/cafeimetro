@@ -12,6 +12,8 @@ include 'script-db/cafe-banco.php';
         <th scope="col">Nome</th>
         <th scope="col">Descrição</th>
         <th scope="col">Tipo</th>
+        <th scope="col">Alterar</th>
+        <th scope="col">Excluir</th>
       </tr>
     </thead>
     <tbody>

@@ -1,5 +1,11 @@
 <?php
 
+function adicionaCafe($conn, $nome, $descricao, $tipo_id)
+{
+    $query = "INSERT INTO cafe (nome, descricao, tipo_id) VALUES ('{$nome}','{$descricao}',{$tipo_id})";
+    return mysqli_query($conn, $query);
+}
+
 function buscaCafeId($conn, $id)
 {
     $query = "SELECT id, nome, descricao, tipo_id FROM cafe WHERE id = {$id}";
