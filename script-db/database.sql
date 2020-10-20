@@ -8,7 +8,6 @@ create table tipo (
   nome varchar (25)
 ) engine=InnoDB;
 
-
 create table cafe (
   id integer auto_increment primary key,
   nome varchar (25),

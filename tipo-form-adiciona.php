@@ -1,8 +1,5 @@
 <?php
-include 'header.php';
-include 'script-db/connect.php';
-include 'script-db/tipo-banco.php';
-?>
+include 'header.php'; ?>
 
 <div class="container">
   <h1>Inserir café</h1>

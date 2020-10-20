@@ -64,3 +64,14 @@ function temVinculoComCafe($conn, $id)
     $count = $res->fetch_assoc();
     return $count['qtd'];
 }
+
+function temTipoPorNome($conn, $nome)
+{
+    $query = "SELECT COUNT(nome) as qtd FROM tipo WHERE nome = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('s', $nome);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $count = $res->fetch_assoc();
+    return $count['qtd'];
+}

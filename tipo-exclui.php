@@ -18,6 +18,7 @@ if ($excluirTipo) { ?>
 <div class="container alert alert-danger" role="alert">
   <p>Erro ao remover registro <?= $nome ?>!</p>
   <p><?= mysqli_error($conn) ?>!</p>
+  <a href="tipo-lista.php" class="outline-primary">Voltar</a>
 </div>
 
 <?php }
