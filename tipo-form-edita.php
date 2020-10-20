@@ -5,6 +5,11 @@ include 'script-db/tipo-banco.php';
 
 $id = $_POST['id'];
 $tipo = buscaTipoId($conn, $id);
+$temVinculo = temVinculoComCafe($conn, $id);
+$msg =
+    $temVinculo == 0
+        ? ""
+        : "Atenção! <br> Existem cafés asociados a este tipo. </br> Se você confirmar a operação, todos os cafés associados receberão o novo tipo.";
 ?>
 
 <div class="container">
@@ -30,6 +35,7 @@ $tipo = buscaTipoId($conn, $id);
 
 </div>
 
+      <div id="msg-vinculo-cafe"><p class="text-danger"><?= $msg ?></p></div>
 
 <?php include "footer.php";
 ?>

@@ -45,8 +45,22 @@ function removeTipo($conn, $id)
     $query = "DELETE FROM tipo WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param('i', $id);
-    // return $stmt->execute();
-    if (!$stmt->execute()) {
-        echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-    }
+    return $stmt->execute();
+    // if (!$stmt->execute()) {
+    //     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+    // }
+}
+
+function temVinculoComCafe($conn, $id)
+{
+    $query = "SELECT COUNT(id) as qtd FROM cafe WHERE tipo_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    // if ($stmt->execute()) {
+    //     echo "Execute failed: (" . $stmt->errno . ")" . $stmt->error;
+    // }
+    $res = $stmt->get_result();
+    $count = $res->fetch_assoc();
+    return $count['qtd'];
 }

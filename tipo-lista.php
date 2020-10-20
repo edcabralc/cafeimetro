@@ -15,9 +15,9 @@ include 'script-db/tipo-banco.php';
       </tr>
     </thead>
     <tbody>
-<?php
-$tipos = listaTipo($conn);
-foreach ($tipos as $tipo): ?>      
+        <?php
+        $tipos = listaTipo($conn);
+        foreach ($tipos as $tipo): ?>      
         <tr>
           <td><?= $tipo['id'] ?></td>
           <td><?= $tipo['nome'] ?></td>
@@ -26,15 +26,22 @@ foreach ($tipos as $tipo): ?>
           <button class="btn btn-primary">Alterar</button>
           </form>
           </td>
+
+          <?php
+          $temVinculo = temVinculoComCafe($conn, $tipo['id']);
+          $statusBotao = $temVinculo == 0 ? "" : "disabled";
+          ?>
+
+
           <td><form name="" method="post" action="tipo-form-exclui.php">
           <input type="hidden" value="<?= $tipo['id'] ?>" name="id" />
-          <button class="btn btn-danger">Excluir</button>
+          <button class="btn btn-danger" <?= $statusBotao ?> >Excluir</button>
           </form>
           </td>
         </tr>
     
      <?php endforeach;
-?>
+        ?>
 </tbody>
   </table>
 </div>

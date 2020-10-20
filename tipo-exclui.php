@@ -12,7 +12,7 @@ $excluirTipo = removeTipo($conn, $id);
 if ($excluirTipo) { ?>
 <div class="container alert alert-success" role="alert">
   <p>Registro <?= $nome ?> removido com sucesso!</p>
-  <a href="cafe-lista.php" class="outline-primary">Voltar</a>
+  <a href="tipo-lista.php" class="outline-primary">Voltar</a>
 </div>
 <?php } else { ?>
 <div class="container alert alert-danger" role="alert">
