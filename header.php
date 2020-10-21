@@ -36,7 +36,7 @@
           <a class="nav-link" href="tipo-form-adiciona.php">Adiciona tipo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Meu Consumo</a>
+          <a class="nav-link" href="consumo-lista.php">Meu Consumo</a>
         </li>
         
       </ul>

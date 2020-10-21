@@ -39,6 +39,7 @@ foreach ($cafes as $cafe): ?>
     
      <?php endforeach;
 ?>
+
 </tbody>
   </table>
 </div>
