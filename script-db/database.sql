@@ -18,7 +18,7 @@ create table cafe (
 
 create table consumo (
   id integer auto_increment primary key,
-  data time,
+  data date,
   hora time,
   qtd integer,
   dia_semana varchar (7),
