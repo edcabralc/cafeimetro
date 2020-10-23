@@ -3,10 +3,23 @@ Autor: edcabralc
 main file
 /*/
 
-function validaForm() {
-    const msg = "* Preencha os campos obrigatórios.";
-    let vazio = 0;
-    let nome = document.querySelectorAll("nome").values;
-    let descricao = document.querySelectorAll("descricao").values;
-    console.log(nome, descricao, msg, vazio);
+function validaForm(destino) {
+    msg = "* Preencha os campos obrigatórios.";
+    vazio = 0;
+
+    document.getElementById("msg-erro").innerHTML = "";
+
+    nome = document.getElementById("nome").value;
+    descricao = document.getElementById("descricao").value;
+
+    if (nome == "") vazio++;
+    if (descricao == "") vazio++;
+
+    if (vazio > 0) {
+        document.getElementById("msg-erro").innerHTML = msg;
+        return false;
+    }
+
+    document.formcafe.action = destino;
+    document.formcafe.submit();
 }

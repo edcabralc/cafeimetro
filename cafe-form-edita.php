@@ -11,7 +11,7 @@ $cafe = buscaCafeId($conn, $id);
 <div class="container">
   <h1>Alterar café</h1>
   
-<form action="cafe-edita.php" method="POST">
+<form action="" method="POST" name="formcafe">
   <input type="hidden" name="id" value="<?= $cafe['id'] ?>">
 
   <div class="form-group">
@@ -50,11 +50,14 @@ $cafe = buscaCafeId($conn, $id);
           </div>
      <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+      <button type="button" onclick="validaForm('cafe-edita.php')" class="btn btn-primary btn-lg">Salvar</button>
+      
       <a href="cafe-lista.php" class="btn btn-outline-danger btn-lg">Cancelar</a>
     </div>
 </form>
-
+<div class="container" id="msg-erro">
+   <p class="text-danger text-center"></p></div>
+</div>
 </div>
 
 
