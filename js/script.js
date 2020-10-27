@@ -23,3 +23,12 @@ function validaForm(destino) {
     document.formcafe.action = destino;
     document.formcafe.submit();
 }
+
+function gerarPDF() {
+    document.getElementById("hide_html").value = document.getElementById(
+        "div-report"
+    ).innerHTML;
+    document.formPDF.action = "gerador-pdf.php";
+    document.formPDF.submit();
+    console.log("ate aqui foi");
+}

@@ -46,6 +46,8 @@ foreach ($consumos as $consumo): ?>
 </tbody>
   </table>
   <button class="btn btn-primary" onclick="window.location.href='consumo-form-adiciona.php'">Adicionar consumo</button>
+  <button class="btn btn-secondary" onclick="window.open('consumo-lista-planilha.php', '_blank')">Exportar para planilha</button>
+  <button class="btn btn-secondary" onclick="window.open('consumo-lista-report.php', '_blank')">Relátorio</button>
 </div>
 
 <?php include "footer.php";

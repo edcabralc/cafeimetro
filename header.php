@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ptBR">
 
 <head>
   <!-- Required meta tags -->

@@ -16,6 +16,22 @@ function listaConsumo($conn)
     return $consumos;
 }
 
+function listaConsumoSemana($conn)
+{
+    $consumos = [];
+    $query =
+        'SELECT dia_semana, count(id) AS qtd FROM consumo GROUP BY dia_semana';
+
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    while ($consumo = $res->fetch_assoc()) {
+        array_push($consumos, $consumo);
+    }
+
+    return $consumos;
+}
+
 function removeConsumo($conn, $id)
 {
     $query = "DELETE FROM consumo WHERE id = ?";
