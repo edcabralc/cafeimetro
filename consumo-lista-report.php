@@ -75,7 +75,7 @@ $dataHoje = date('d/m/Y H:m:s');
       <td>R$ <?= number_format($valorTotal, 2, ',', '.') ?></td>
     </tr>
   </table>
- 
+ <h3 class="text-center">Gráficos</h3>
    <div id="piechart" style="width: 900px; height: 500px;"></div>
   
 </div>
@@ -100,21 +100,29 @@ $dataHoje = date('d/m/Y H:m:s');
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
+
           <?php
           $consumosDiaSemana = listaConsumoSemana($conn);
           foreach ($consumosDiaSemana as $consumo) {
               $dia = $consumo['dia_semana'];
               $qtd = $consumo['qtd'];
-              echo "['{$dia} ({$qtd})', '{$qtd}'],";
+              echo "['{$dia} ({$qtd})', {$qtd}],";
           }
           ?>
         ]);
 
         var options = {
-          title: 'My Daily Activities'
+          title: 'Meu consumo'
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart_area = document.getElementById('piechart');
+      var chart = new google.visualization.PieChart(chart_area);
+
+      // Wait for the chart to finish drawing before calling the getImageURI() method.
+      google.visualization.events.addListener(chart, 'ready', function () {
+        chart_area.innerHTML = '<img src="' + chart.getImageURI() + '">';
+        
+      });
 
         chart.draw(data, options);
       }
@@ -132,7 +140,7 @@ function gerarPDF() {
     
 }
 
-      </script>
+</script>
 
 <?php include "footer.php";
 ?>
